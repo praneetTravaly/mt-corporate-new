@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-blue: #0A192F;
+  --color-brand-gold: #C5A059;
+  --color-brand-gold-light: #E5C17E;
+
+  --color-background: white;
+  --color-foreground: #0f172a;
+  --color-border: #e2e8f0;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+@layer utilities {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
+  }
+  
+  .micro-label {
+    @apply text-[10px] font-black uppercase tracking-[0.4em] text-brand-gold;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+}
